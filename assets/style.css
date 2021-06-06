@@ -1,11 +1,14 @@
-* {
+html, body, header, main, div, button, p, h1 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --square-default: 50px;
+}
+
 body {
-    /* background-color: #00053d; */
     background-image: url(./img/fundo.png);
 }
 
@@ -13,63 +16,40 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -55%);
+    transform: translate(-50%, -50%);
     border: 15px ridge #b09177;
 }
 
-#modal {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 5px solid #1906a0;
-    border-radius: 10px;
-    background-color: #4181ff;
-    color: #fff;
-    text-align: center;
-}
-
-div#modal h1 {
-    font-size: 2.5rem;
-}
-div#modal p {
-    font-size: 1.5rem;
-}
-#btn-modal {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #36158a;
-    color: #fff;
-}
+/* Botão inicial */
 
 #iniciar {
-    font-size: 1.5rem;
     width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
-    background: linear-gradient(#341b8e, #1e5ec4);
-    border: none;
-    border-radius: 10px;
     color: #fff;
-    height: 50px;
+    background: linear-gradient(#341b8e, #1e5ec4);
+    z-index: 2;
 }
 
 #iniciar:hover {
     background: linear-gradient(#1b568e, #1e95c4);
 }
 
+/* ----------------------- */
+
+/* Portal */
+
 .porta {
-    position: absolute;
-    /* background-color: green; */
     width: 50%;
     height: 100%;
+    position: absolute;
     z-index: 1;
-    
 }
 
 .hidden {
@@ -111,15 +91,65 @@ div#modal p {
     }
 }
 
+/* --------------------------------- */
+
+/* Mensagem inicial */
+
+#modal {
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #1906a0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: #4181ff;
+    z-index: 2;
+}
+
+div#modal h1 {
+    font-size: 2.5rem;
+}
+div#modal p {
+    font-size: 1.5rem;
+}
+#btn-modal {
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #36158a;
+}
+
+/* ------------------------------- */
+
+/* Container central */
+
+#map {
+    margin: 10px;
+    position: relative;
+    width: calc(21 * var(--square-default));
+    height: calc(15 * var(--square-default));   
+}
+
+.linha {
+    display: flex;
+}
+
+/* ----------------- */
+
+/* Elementos do labirinto */
+
 .parede {
-    width: 50px;
-    height: 50px;
+    width: var(--square-default);
+    height: var(--square-default);
     background-image: url(./img/bloco.png);
 }
 
 .vazio {
-    width: 50px;
-    height: 50px;
+    width: var(--square-default);
+    height: var(--square-default);
     background-image: url(./img/caminho.png);
 }
 
@@ -127,24 +157,15 @@ div#modal p {
     background-image: url(./img/chegada.png);
 }
 
-.linha {
-    display: flex;
-}
-
-#map {
-    margin: 10px;
-    position: relative;
-    width: calc(21 * 50px);
-    height: calc(15 * 50px);
-}
-
 #player {
+    width: var(--square-default);
+    height: var(--square-default);
     position: absolute;
-    width: 50px;
-    height: 50px;
     top: 450px;
     left: 0;
 }
+
+/* ---------------------- */
 
 #span {
     position: absolute;
