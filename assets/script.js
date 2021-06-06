@@ -59,50 +59,21 @@ document.addEventListener('keydown', (event) => {
     const caminho = mapear();
 
     if (keyName === 'ArrowUp') {
-        personLinha -= 50;
+        
+        moveLinha(caminho, 1, personagem);
 
-        let output = findCoordenadas(caminho, personLinha, personColuna);
-
-        if (output) {
-            personagem.style.top = personLinha + 'px';
-            personagem.style.left = personColuna + 'px';
-        } else {
-            personLinha += 50;
-        }
     } else if (keyName === 'ArrowRight') {
-        personColuna += 50;
+        
+        moveColuna(caminho, 2, personagem);
 
-        let output = findCoordenadas(caminho, personLinha, personColuna);
-
-        if (output) {
-            personagem.style.top = personLinha + 'px';
-            personagem.style.left = personColuna + 'px';
-        } else {
-            personColuna -= 50;
-        }
     } else if (keyName === 'ArrowDown') {
-        personLinha += 50;
 
-        let output = findCoordenadas(caminho, personLinha, personColuna);
-
-        if (output) {
-            personagem.style.top = personLinha + 'px';
-            personagem.style.left = personColuna + 'px';
-        } else {
-            personLinha -= 50;
-        }
+        moveLinha(caminho, 2, personagem);
 
     } else if (keyName === 'ArrowLeft') {
-        personColuna -= 50;
+        
+        moveColuna(caminho, 1, personagem);
 
-        let output = findCoordenadas(caminho, personLinha, personColuna);
-
-        if (output) {
-            personagem.style.top = personLinha + 'px';
-            personagem.style.left = personColuna + 'px';
-        } else {
-            personColuna += 50;
-        }
     }
 
 });
@@ -124,14 +95,43 @@ const mapear = () => {
     return caminho;
 }
 
-const varificaPasso = (array) => {
-    let validaCoord = findCoordenadas(array, personLinha, personColuna);
+const moveLinha = (array, signal, personagem) => {
+    if (signal === 1) {
+        personLinha -= 50;
+    } else if (signal === 2) {
+        personLinha += 50;
+    }
+
+    let validaCoord = findCoordenadas(array, personLinha, personColuna);   
 
     if (validaCoord) {
         personagem.style.top = personLinha + 'px';
+    } else {
+        if (signal === 1) {
+            personLinha += 50;
+        } else if (signal === 2) {
+            personLinha -= 50;
+        }
+    }
+}
+
+const moveColuna = (array, signal, personagem) => {
+    if (signal === 1) {
+        personColuna -= 50;
+    } else if (signal === 2) {
+        personColuna += 50;
+    }
+
+    let validaCoord = findCoordenadas(array, personLinha, personColuna);   
+
+    if (validaCoord) {
         personagem.style.left = personColuna + 'px';
     } else {
-        personColuna += 25;
+        if (signal === 1) {
+            personColuna += 50;
+        } else if (signal === 2) {
+            personColuna -= 50;
+        }
     }
 }
 
