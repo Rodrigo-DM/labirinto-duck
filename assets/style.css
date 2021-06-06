@@ -5,7 +5,6 @@
 }
 
 body {
-    /* background-color: #00053d; */
     background-image: url(./img/fundo.png);
 }
 
@@ -17,32 +16,7 @@ main {
     border: 15px ridge #b09177;
 }
 
-#modal {
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 5px solid #1906a0;
-    border-radius: 10px;
-    background-color: #4181ff;
-    color: #fff;
-    text-align: center;
-}
-
-div#modal h1 {
-    font-size: 2.5rem;
-}
-div#modal p {
-    font-size: 1.5rem;
-}
-#btn-modal {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #36158a;
-    color: #fff;
-}
+/* Botão inicial */
 
 #iniciar {
     font-size: 1.5rem;
@@ -63,13 +37,15 @@ div#modal p {
     background: linear-gradient(#1b568e, #1e95c4);
 }
 
+/* ----------------------- */
+
+/* Portal */
+
 .porta {
     position: absolute;
-    /* background-color: green; */
     width: 50%;
     height: 100%;
     z-index: 1;
-    
 }
 
 .hidden {
@@ -111,6 +87,56 @@ div#modal p {
     }
 }
 
+/* --------------------------------- */
+
+/* Mensagem inicial */
+
+#modal {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 5px solid #1906a0;
+    border-radius: 10px;
+    background-color: #4181ff;
+    color: #fff;
+    text-align: center;
+}
+
+div#modal h1 {
+    font-size: 2.5rem;
+}
+div#modal p {
+    font-size: 1.5rem;
+}
+#btn-modal {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #36158a;
+    color: #fff;
+}
+
+/* ------------------------------- */
+
+/* Container central */
+
+#map {
+    margin: 10px;
+    position: relative;
+    width: calc(21 * 50px);
+    height: calc(15 * 50px);
+}
+
+.linha {
+    display: flex;
+}
+
+/* ----------------- */
+
+/* Elementos do labirinto */
+
 .parede {
     width: 50px;
     height: 50px;
@@ -127,17 +153,6 @@ div#modal p {
     background-image: url(./img/chegada.png);
 }
 
-.linha {
-    display: flex;
-}
-
-#map {
-    margin: 10px;
-    position: relative;
-    width: calc(21 * 50px);
-    height: calc(15 * 50px);
-}
-
 #player {
     position: absolute;
     width: 50px;
@@ -145,6 +160,8 @@ div#modal p {
     top: 450px;
     left: 0;
 }
+
+/* ---------------------- */
 
 #span {
     position: absolute;
