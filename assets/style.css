@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #00053d; */
+    background-image: url(./img/fundo.png);
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    border: 15px ridge #b09177;
+}
+
+#modal {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 5px solid #1906a0;
+    border-radius: 10px;
+    background-color: #4181ff;
+    color: #fff;
+    text-align: center;
+}
+
+div#modal h1 {
+    font-size: 2.5rem;
+}
+div#modal p {
+    font-size: 1.5rem;
+}
+#btn-modal {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #36158a;
+    color: #fff;
+}
+
+#iniciar {
+    font-size: 1.5rem;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: linear-gradient(#341b8e, #1e5ec4);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    height: 50px;
+}
+
+#iniciar:hover {
+    background: linear-gradient(#1b568e, #1e95c4);
+}
+
+.porta {
+    position: absolute;
+    /* background-color: green; */
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+.anima {
+    animation: abrir-porta 1s 0.5s steps(2);
+}
+
+#left {
+    left: 0;
+    background: url(./img/portal.png) left top;
+}
+
+#right {
+    right: 0;
+    background: url(./img/portal.png) right top;
+}
+
+@keyframes abrir-porta {
+    0% {
+        width: 50%;
+    }
+    20% {
+        width: 40%;
+    }
+    40% {
+        width: 30%;
+    }
+    60% {
+        width: 20%;
+    }
+    80% {
+        width: 10%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+.parede {
+    width: 50px;
+    height: 50px;
+    background-image: url(./img/bloco.png);
+}
+
+.vazio {
+    width: 50px;
+    height: 50px;
+    background-image: url(./img/caminho.png);
+}
+
+#chegada {
+    background-image: url(./img/chegada.png);
+}
+
+.linha {
+    display: flex;
+}
+
+#map {
+    margin: 10px;
+    position: relative;
+    width: calc(21 * 50px);
+    height: calc(15 * 50px);
+}
+
+#player {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 450px;
+    left: 0;
+}
+
+#span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #fff;
+    padding: 20px;
+    background-color: green;
+}

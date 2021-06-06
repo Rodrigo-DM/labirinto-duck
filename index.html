@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,21 @@
     <link rel="stylesheet" href="./assets/style.css">
     <title>Labirinto</title>
 </head>
-<body>
 
+<body>
+    <main>
+        <div class="porta" id="left"></div>
+        <div class="porta" id="right"></div>
+        <button id="iniciar">Jogar</button>
+        <div id="modal" class="hidden">
+            <h1>Seja Bem-vindo</h1>
+            <p>Sua missão aqui é levar a patinha Ellen até a água do outro lado do labirinto.</p>
+            <p>Vamos começar?</p>
+            <button id='btn-modal'>Ok</button>
+        </div>
+        <div id="map"></div>
+    </main>
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
