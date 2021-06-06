@@ -56,10 +56,6 @@ main {
     display: none;
 }
 
-.anima {
-    animation: abrir-porta 1s 0.5s steps(2);
-}
-
 #left {
     left: 0;
     background: url(./img/portal.png) left top;
@@ -70,7 +66,7 @@ main {
     background: url(./img/portal.png) right top;
 }
 
-@keyframes abrir-porta {
+@keyframes abrir-portal {
     0% {
         width: 50%;
     }
@@ -89,6 +85,35 @@ main {
     100% {
         width: 0;
     }
+}
+
+.anima {
+    animation: abrir-portal 1s 0.5s steps(2);
+}
+
+@keyframes fechar-portal {
+    0% {
+        width: 0;
+    }
+    20% {
+        width: 10%;
+    }
+    40% {
+        width: 20%;
+    }
+    60% {
+        width: 30%;
+    }
+    80% {
+        width: 40%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+.anima2 {
+    animation: fechar-portal 1s 0.5s steps(2);
 }
 
 /* --------------------------------- */

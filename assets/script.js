@@ -59,11 +59,11 @@ document.addEventListener('keydown', (event) => {
     const caminho = mapear();
 
     if (keyName === 'ArrowUp') {
-        
+
         moveLinha(caminho, 1, personagem);
 
     } else if (keyName === 'ArrowRight') {
-        
+
         moveColuna(caminho, 2, personagem);
 
     } else if (keyName === 'ArrowDown') {
@@ -71,7 +71,7 @@ document.addEventListener('keydown', (event) => {
         moveLinha(caminho, 2, personagem);
 
     } else if (keyName === 'ArrowLeft') {
-        
+
         moveColuna(caminho, 1, personagem);
 
     }
@@ -102,7 +102,7 @@ const moveLinha = (array, signal, personagem) => {
         personLinha += 50;
     }
 
-    let validaCoord = findCoordenadas(array, personLinha, personColuna);   
+    let validaCoord = findCoordenadas(array, personLinha, personColuna);
 
     if (validaCoord) {
         personagem.style.top = personLinha + 'px';
@@ -125,7 +125,7 @@ const moveColuna = (array, signal, personagem) => {
         personColuna += 50;
     }
 
-    let validaCoord = findCoordenadas(array, personLinha, personColuna);   
+    let validaCoord = findCoordenadas(array, personLinha, personColuna);
 
     if (validaCoord) {
         personagem.style.left = personColuna + 'px';
@@ -186,3 +186,28 @@ const chamarModal = (time, position) => {
         modal.classList.remove('hidden');
     }, time)
 }
+
+const btnFinal = document.getElementById('final-n');
+
+btnFinal.addEventListener('click', () => {
+    const modal = document.getElementsByClassName('modal')[1];
+    modal.classList.add('hidden');
+
+    const portaLeft = document.getElementById('left');
+    const portaRight = document.getElementById('right');
+
+    portaLeft.classList.add('anima2');
+    portaRight.classList.add('anima2');
+
+    portaLeft.style.width = 0;
+    portaRight.style.width = 0;
+
+    portaLeft.classList.remove('hidden');
+    portaRight.classList.remove('hidden');
+
+    setTimeout(() => {
+        portaLeft.style.width = 50 + '%';
+        portaRight.style.width = 50 + '%';
+        btnIniciar.classList.remove('hidden')
+    }, 1450);
+})
