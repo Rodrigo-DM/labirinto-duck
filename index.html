@@ -15,11 +15,18 @@
         <button id="iniciar">Jogar</button>
         <div class="porta" id="left"></div>
         <div class="porta" id="right"></div>
-        <div id="modal" class="hidden">
+        <div id="modal-inicial" class="modal hidden">
             <h1>Seja Bem-vindo</h1>
             <p>Sua missão aqui é levar a patinha Ellen até a água do outro lado do labirinto.</p>
             <p>Vamos começar?</p>
-            <button id='btn-modal'>Ok</button>
+            <button id='btn-modal' class="btn-modal">Ok</button>
+        </div>
+        <div id="modal-final" class="modal hidden">
+            <h1>Parabéns!</h1>
+            <p>Você conseguiu executar sua missão com sucesso.</p>
+            <p>Deseja jogar novamente?</p>
+            <button id='final-y' class="btn-modal">Sim</button>
+            <button id='final-n' class="btn-modal">Não</button>
         </div>
         <div id="map"></div>
     </main>

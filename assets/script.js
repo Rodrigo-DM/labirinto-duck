@@ -106,6 +106,9 @@ const moveLinha = (array, signal, personagem) => {
 
     if (validaCoord) {
         personagem.style.top = personLinha + 'px';
+        if (personLinha === 400 && personColuna === 1000) {
+            chamarModal(0, 1)
+        }
     } else {
         if (signal === 1) {
             personLinha += 50;
@@ -126,6 +129,9 @@ const moveColuna = (array, signal, personagem) => {
 
     if (validaCoord) {
         personagem.style.left = personColuna + 'px';
+        if (personLinha === 400 && personColuna === 1000) {
+            chamarModal(0, 1)
+        }
     } else {
         if (signal === 1) {
             personColuna += 50;
@@ -155,8 +161,6 @@ btnIniciar.addEventListener('click', () => {
     const portaLeft = document.getElementById('left');
     const portaRight = document.getElementById('right');
 
-    const modal = document.getElementById('modal');
-
     portaLeft.classList.add('anima');
     portaRight.classList.add('anima');
 
@@ -165,13 +169,20 @@ btnIniciar.addEventListener('click', () => {
         portaRight.classList.add('hidden');
     }, 1450);
 
-    setTimeout(() => {
-        modal.classList.remove('hidden');
-    }, 1950)
+    chamarModal(1950, 0);
 })
 
 const btnModal = document.getElementById('btn-modal');
 
 btnModal.addEventListener('click', () => {
+    const modal = document.getElementById('modal-inicial');
     modal.classList.add('hidden');
 })
+
+const chamarModal = (time, position) => {
+    const modal = document.getElementsByClassName('modal')[position];
+
+    setTimeout(() => {
+        modal.classList.remove('hidden');
+    }, time)
+}
