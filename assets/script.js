@@ -57,12 +57,14 @@ const construirLabrinto = () => {
     map.forEach((value) => montarDivs(value, container));
 }
 
+const fecharModal = (id) => {
+    const modal = document.getElementById(id);
+    modal.classList.add('hidden');
+}
+
 const btnModal = document.getElementById('btn-modal');
 
-btnModal.addEventListener('click', () => {
-    const modal = document.getElementById('modal-inicial');
-    modal.classList.add('hidden');
-})
+btnModal.addEventListener('click', fecharModal('modal-inicial'))
 
 const chamarModal = (time, position) => {
     const modal = document.getElementsByClassName('modal')[position];
@@ -97,7 +99,7 @@ btnIniciar.addEventListener('click', () => {
         portaRight.classList.add('hidden');
     }, 1450);
 
-    chamarModal(1750, 0);
+    chamarModal(1550, 0);
 })
 
 const mapear = () => {
@@ -190,15 +192,23 @@ document.addEventListener('keydown', (event) => {
     const caminho = mapear();
 
     if (keyName === 'ArrowUp') {
+        fecharModal('modal-inicial');
+        fecharModal('modal-final');
         moveLinha(caminho, 1, personagem);
 
     } else if (keyName === 'ArrowRight') {
+        fecharModal('modal-inicial');
+        fecharModal('modal-final');
         moveColuna(caminho, 2, personagem);
 
     } else if (keyName === 'ArrowDown') {
+        fecharModal('modal-inicial');
+        fecharModal('modal-final');
         moveLinha(caminho, 2, personagem);
 
     } else if (keyName === 'ArrowLeft') {
+        fecharModal('modal-inicial');
+        fecharModal('modal-final');
         moveColuna(caminho, 1, personagem);
     }
 });
@@ -206,6 +216,7 @@ document.addEventListener('keydown', (event) => {
 const btnSim = document.getElementById('final-y');
 
 btnSim.addEventListener('click', () => {
+    fecharModal('modal-inicial');
     const modal = document.getElementsByClassName('modal')[1];
     modal.classList.add('hidden');
     const personagem = document.getElementById('player');
@@ -220,6 +231,7 @@ btnSim.addEventListener('click', () => {
 const btnNao = document.getElementById('final-n');
 
 btnNao.addEventListener('click', () => {
+    fecharModal('modal-inicial');
     const modal = document.getElementsByClassName('modal')[1];
     modal.classList.add('hidden');
 
