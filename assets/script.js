@@ -23,7 +23,7 @@ const montarDivs = (value, container) => {
     for (let i = 0; i < value.length; i++) {
         if (value[i] === 'W') {
             const celula = document.createElement('div');
-            
+
             celula.classList = ('parede');
             linha.appendChild(celula);
 
@@ -250,6 +250,8 @@ btnNao.addEventListener('click', () => {
     setTimeout(() => {
         portaLeft.style.width = 50 + '%';
         portaRight.style.width = 50 + '%';
-        btnIniciar.classList.remove('hidden')
+        btnIniciar.classList.remove('hidden');
+        portaLeft.classList.remove('anima2');
+        portaRight.classList.remove('anima2');
     }, 1450);
 })
