@@ -64,7 +64,7 @@ const fecharModal = (id) => {
 
 const btnModal = document.getElementById('btn-modal');
 
-btnModal.addEventListener('click', fecharModal('modal-inicial'))
+btnModal.addEventListener('click', () => fecharModal('modal-inicial'))
 
 const chamarModal = (time, position) => {
     const modal = document.getElementsByClassName('modal')[position];
