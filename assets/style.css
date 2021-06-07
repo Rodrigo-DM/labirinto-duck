@@ -207,16 +207,3 @@ div.modal p {
 }
 
 /* ---------------------- */
-
-footer {
-    position: absolute;
-    left: 50%;
-    bottom: 2%;
-    transform: translateX(-50%);
-}
-
-footer p {
-    color: #fff;
-    font-family: 'Do Hyeon', sans-serif;
-    font-size: 1.5rem;
-}
