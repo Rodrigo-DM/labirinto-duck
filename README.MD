@@ -9,7 +9,9 @@
 
 ## Demonstração
 
-https://user-images.githubusercontent.com/58209931/121266381-cb80e500-c890-11eb-9b1e-c97b6e2c3c52.mp4
+![labirinto](https://user-images.githubusercontent.com/58209931/121266381-cb80e500-c890-11eb-9b1e-c97b6e2c3c52.mp4)
+
+<!-- ![labirinto](https://user-images.githubusercontent.com/58209931/121268201-df7a1600-c893-11eb-9531-222b9cb47b6f.gif) -->
 
 ### 🛠 Tecnologias
 
